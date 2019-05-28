@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import qa from './qa';
+import List from './list';
+import './app.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Accordian extends React.Component {
+  
+  state = {
+    currentIndex: -1,
+  }
+
+  handleChange = (i) => {
+    this.setState({
+      currentIndex: i
+    })
+  };
+
+  render() {
+    const { handleChange } = this;
+    const { currentIndex, isActive } = this.state;
+
+    return (
+      <div className="accordian">
+        {qa.map( (e, i) => {
+          return (
+            <List 
+              question={e.question} 
+              answer={e.answer} 
+              handleChange={handleChange}
+              key={i} 
+              index={i}
+              currentIndex={currentIndex}
+            />
+          );
+        })}
+      </div>
+    );
+  }
 }
 
-export default App;
+export default Accordian;
