@@ -17,7 +17,7 @@ class Accordian extends React.Component {
 
   render() {
     const { handleChange } = this;
-    const { currentIndex, isActive } = this.state;
+    const { currentIndex } = this.state;
 
     return (
       <div className="accordian">
