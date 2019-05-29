@@ -1,3 +1,17 @@
+# React-Accordian
+
+An accordian component built with React to show and hide answers to questions.  Only one answer is able to be viewed at a time. 
+
+* The data in the Accordian comes from an array of questions and answers declared in qa.js
+* Components include 
+  * Accordian class in app.js
+  * List function in list.js
+    * Holder className
+    * Question className
+    * Answer className
+  
+The accordian class behavior is controlled by the currentIndex in the React state in Accordian. Clicking on a question sets the currentIndex in the state to the index of that question (from the sample data array). Conditional rendering then only shows the Answer for the question that corresponds to the currentIndex. CSS displays how it looks and the transition and translation of the accordian. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
